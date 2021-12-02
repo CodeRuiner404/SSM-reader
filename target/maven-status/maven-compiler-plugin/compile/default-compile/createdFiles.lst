@@ -1,0 +1,14 @@
+com/ibei/reader/entity/Test.class
+com/ibei/reader/mapper/TestMapper.class
+com/ibei/reader/mapper/BookMapper.class
+com/ibei/reader/service/impl/CategoryImpl.class
+com/ibei/reader/service/BookService.class
+com/ibei/reader/entity/Category.class
+com/ibei/reader/controller/TestController.class
+com/ibei/reader/controller/BookController.class
+com/ibei/reader/entity/Book.class
+com/ibei/reader/mapper/CategoryMapper.class
+com/ibei/reader/MybatisPlusTest.class
+com/ibei/reader/service/impl/BookServiceImpl.class
+com/ibei/reader/service/CategoryService.class
+com/ibei/reader/service/TestService.class
