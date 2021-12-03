@@ -4,7 +4,11 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.ibei.reader.entity.Book;
+import com.ibei.reader.entity.Evaluation;
+import com.ibei.reader.entity.MemberReadState;
 import com.ibei.reader.mapper.BookMapper;
+import com.ibei.reader.mapper.EvaluationMapper;
+import com.ibei.reader.mapper.MemberReadStateMapper;
 import com.ibei.reader.service.BookService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -18,6 +22,10 @@ import java.util.List;
 public class BookServiceImpl implements BookService {
     @Resource
     private BookMapper bookMapper;
+    @Resource
+    private MemberReadStateMapper memberReadStateMapper;
+    @Resource
+    private EvaluationMapper evaluationMapper;
 
     @Override
     public IPage<Book> paging(Long categoryId,String order,Integer page, Integer rows) {
@@ -37,5 +45,37 @@ public class BookServiceImpl implements BookService {
     @Override
     public Book selectById(Long bookId) {
         return bookMapper.selectById(bookId);
+    }
+
+    @Override
+    @Transactional
+    public void updateEvaluation() {
+        bookMapper.updateEvaluation();
+    }
+
+    @Override
+    @Transactional
+    public Book createBook(Book book) {
+        bookMapper.insert(book);
+        return book;
+    }
+
+    @Override
+    @Transactional
+    public Book updateBook(Book book) {
+        bookMapper.updateById(book);
+        return book;
+    }
+
+    @Override
+    @Transactional
+    public void deleteBook(Long bookId) {
+        bookMapper.deleteById(bookId);
+        QueryWrapper<MemberReadState> mqw = new QueryWrapper<>();
+        mqw.eq("book_id",bookId);
+        memberReadStateMapper.deleteById(mqw);
+        QueryWrapper<Evaluation> eqw = new QueryWrapper<>();
+        eqw.eq("book_id",bookId);
+        evaluationMapper.delete(eqw);
     }
 }

@@ -21,4 +21,32 @@ public interface BookService {
      * @return Book
      */
     public Book selectById(Long bookId);
+
+    /**
+     * 更新图书评分/评价数量
+     *
+     */
+    public void updateEvaluation();
+
+    /**
+     *创建新的图书
+     * @param book
+     * @return
+     */
+    public  Book createBook(Book book);
+
+    /**
+     * 更新图书
+     * @param book
+     * @return
+     */
+    public  Book updateBook(Book book);
+
+    /**
+     * 删除 图书即相关数据
+     * @param bookId
+     */
+
+    public void deleteBook(Long bookId);
+
 }
