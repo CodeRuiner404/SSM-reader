@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.ibei.reader.service.TestServiceTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.126 sec <<< FAILURE!
-batchImport(com.ibei.reader.service.TestServiceTest)  Time elapsed: 0.11 sec  <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.137 sec <<< FAILURE!
+batchImport(com.ibei.reader.service.TestServiceTest)  Time elapsed: 0.096 sec  <<< ERROR!
 java.lang.RuntimeException: 意外
 	at com.ibei.reader.service.TestService.batchImport(TestService.java:18)
 	at com.ibei.reader.service.TestService$$FastClassBySpringCGLIB$$8fe68ae3.invoke(<generated>)
@@ -16,7 +16,7 @@ java.lang.RuntimeException: 意外
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
-	at com.ibei.reader.service.TestService$$EnhancerBySpringCGLIB$$64c046ec.batchImport(<generated>)
+	at com.ibei.reader.service.TestService$$EnhancerBySpringCGLIB$$eff028be.batchImport(<generated>)
 	at com.ibei.reader.service.TestServiceTest.batchImport(TestServiceTest.java:19)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
